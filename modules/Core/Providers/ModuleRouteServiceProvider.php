@@ -56,12 +56,12 @@ class ModuleRouteServiceProvider extends ServiceProvider
             return;
         }
 
-        Route::group(
-            [
-                'middleware' => ['web'],
-            ],
-            fn () => require $path,
-        );
+        foreach ($this->centralDomains() as $domain) {
+            Route::middleware('web')
+                ->domain($domain)
+                ->namespace($this->namespace)
+                ->group(fn () => require $path);
+        }
     }
 
     /**
@@ -73,12 +73,17 @@ class ModuleRouteServiceProvider extends ServiceProvider
             return;
         }
 
-        Route::group(
-            [
-                'prefix'     => 'api',
-                'middleware' => ['api'],
-            ],
-            fn () => require $path,
-        );
+        foreach ($this->centralDomains() as $domain) {
+            Route::prefix('api')
+                ->domain($domain)
+                ->middleware('api')
+                ->namespace($this->namespace)
+                ->group(fn () => require $path);
+        }
+    }
+
+    protected function centralDomains(): array
+    {
+        return config('tenancy.central_domains', ['localhost']);
     }
 }

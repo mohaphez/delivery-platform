@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Filament\Providers;
 
 use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
-use Filament\Facades\Filament;
 use Illuminate\Support\ServiceProvider;
 use Modules\Filament\Contracts\FilamentServiceInterface;
 use Modules\Filament\Services\FilamentService;

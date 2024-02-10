@@ -120,11 +120,6 @@ class UserResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\Action::make('activities')
-                    ->label('Activities')
-                    ->icon('heroicon-m-bolt')
-                    ->color('purple')
-                    ->url(fn ($record) => self::getUrl('activities', ['record' => $record])),
                 Tables\Actions\RestoreAction::make(),
             ])
             ->bulkActions([
@@ -162,10 +157,9 @@ class UserResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index'      => Pages\ListUsers::route('/'),
-            'create'     => Pages\CreateUser::route('/create'),
-            'edit'       => Pages\EditUser::route('/{record}/edit'),
-            'activities' => Pages\ActivitiesPage::route('/order/{record}/activities'),
+            'index'  => Pages\ListUsers::route('/'),
+            'create' => Pages\CreateUser::route('/create'),
+            'edit'   => Pages\EditUser::route('/{record}/edit')
         ];
     }
 }

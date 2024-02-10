@@ -1,0 +1,13 @@
+{
+    "id": "Permission",
+    "title": "Permission Module",
+    "version": 0.1,
+    "name": "Permission",
+    "alias": "permission",
+    "description": "Permission module by Mohaphez",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Permission\\Providers\\PermissionServiceProvider"
+    ]
+}
