@@ -1,0 +1,25 @@
+{
+    "name": "mohaphez/core-module",
+    "description": "Core module by Mohaphez",
+    "require": {
+        "predis/predis": "^v2.2",
+        "prettus/l5-repository": "^2.9",
+        "spatie/laravel-translatable": "^6.5.3",
+        "spatie/laravel-data": "^3.9.2"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.24.3",
+        "pestphp/pest-plugin-laravel": "^2.2.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Core\\": ""
+        }
+    }
+}
