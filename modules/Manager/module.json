@@ -1,0 +1,16 @@
+{
+    "id": "Manager",
+    "title": "Manager Module",
+    "version": 0.1,
+    "name": "Manager",
+    "alias": "manager",
+    "description": "Manager module by Mohaphez",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Manager\\Providers\\ManagerServiceProvider"
+    ],
+    "files": [
+        "Helpers/helpers.php"
+    ]
+}
