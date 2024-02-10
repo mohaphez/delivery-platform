@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Support\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Modules\Support\Console\V1\Panic\Venus;
 use Modules\Support\Services\V1\FloodService\FloodService;
 use Modules\Support\Contracts\V1\FloodService\FloodServiceInterface;
 
