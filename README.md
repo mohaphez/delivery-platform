@@ -8,7 +8,7 @@ This project is a scalable SaaS-style platform designed to assist delivery compa
 
 - **User Management:**
     - Users can log in, access the system, and create orders for clients.
-    - Clients have the ability to create orders for delivery to their addresses.
+    - Agents have the ability to create orders for delivery to their client's addresses.
 
 - **Order Management:**
     - Represents the amount of item to be delivered to the client's address.
