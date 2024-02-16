@@ -110,20 +110,19 @@ cp .env.example .env
  127.0.0.1 petro.center.test
  ```
 
-Access the Lord application manager panel at http://center.test/manager/login.
+### Access the Lord application manager panel at http://center.test/manager/login.
 
 ![image](https://github.com/mohaphez/delivery-platform/assets/20874565/32b39c5a-741b-425d-ac8b-f6991bf4d2dc)
-
 
 ### Access the client Haio application at http://haio.center.test.
 
 ![image](https://github.com/mohaphez/delivery-platform/assets/20874565/473fa4bd-6c06-4119-94b4-f8c5b5918732)
 
-#### Access the client Petro application at http://petro.center.test.
+### Access the client Petro application at http://petro.center.test.
 
 ![image](https://github.com/mohaphez/delivery-platform/assets/20874565/971e5a61-644e-4958-b0a2-c86bf09c91f0)
 
-#### Access the Haio application agent panel at http://haio.center.test/agent/login.
+### Access the Haio application agent panel at http://haio.center.test/agent/login.
 
 ![image](https://github.com/mohaphez/delivery-platform/assets/20874565/2aad8991-785a-4ab5-9859-8b98f6b8046b)
 
