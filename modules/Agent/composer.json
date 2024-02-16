@@ -1,0 +1,21 @@
+{
+    "name": "mohaphez/agent-module",
+    "description": "Agent module by Mohaphez",
+    "authors": [
+        {
+            "name": "Hessam taghvaei",
+            "email": "mohaphez@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Agent\\": ""
+        }
+    }
+}

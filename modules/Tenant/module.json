@@ -1,0 +1,13 @@
+{
+    "id": "Tenant",
+    "title": "Tenant Module",
+    "version": 0.1,
+    "name": "Tenant",
+    "alias": "tenant",
+    "description": "Tenant module by Mohaphez",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Tenant\\Providers\\TenantServiceProvider"
+    ]
+}

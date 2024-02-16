@@ -1,0 +1,23 @@
+{
+    "name": "mohaphez/order-module",
+    "description": "Order module by Hessam Taghvei",
+    "authors": [
+        {
+            "name": "Hessam Taghvei",
+            "email": "mohaphez@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Order\\": ""
+        }
+    }
+}

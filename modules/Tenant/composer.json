@@ -1,0 +1,26 @@
+{
+    "name": "mohaphez/tenant-module",
+    "description": "Tenant module by Hessam Taghvei",
+    "authors": [
+        {
+            "name": "Hessam Taghvei",
+            "email": "mohaphez@gmail.com"
+        }
+    ],
+    "require": {
+        "stancl/tenancy": "^3.7.4"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Tenant\\": ""
+        }
+    }
+}

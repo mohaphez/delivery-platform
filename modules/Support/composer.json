@@ -1,0 +1,15 @@
+{
+    "name": "mohaphez/support-module",
+    "description": "Support module by Mohaphez",
+    "authors": [
+        {
+            "name": "Hessam taghvaei",
+            "email": "mohaphez@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\Support\\": ""
+        }
+    }
+}

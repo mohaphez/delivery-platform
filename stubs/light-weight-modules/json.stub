@@ -4,7 +4,7 @@
     "version": 0.1,
     "name": "$STUDLY_NAME$",
     "alias": "$LOWER_NAME$",
-    "description": "$STUDLY_NAME$ module by Dotswan",
+    "description": "$STUDLY_NAME$ module by Mohaphez",
     "keywords": [],
     "priority": 0,
     "providers": [

@@ -1,0 +1,16 @@
+{
+    "id": "Filament",
+    "title": "Filament Module",
+    "version": 0.1,
+    "name": "Filament",
+    "alias": "filament",
+    "description": "Filament module by Mohaphez",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Filament\\Providers\\FilamentServiceProvider"
+    ],
+    "files": [
+        "Helpers/helpers.php"
+    ]
+}

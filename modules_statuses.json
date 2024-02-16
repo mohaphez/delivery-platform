@@ -1,0 +1,14 @@
+{
+    "Core": true,
+    "Base": true,
+    "Filament": true,
+    "Manager": true,
+    "Support": true,
+    "User": true,
+    "Permission": true,
+    "Tenant": true,
+    "Truck": true,
+    "Order": true,
+    "Agent": true,
+    "Theme": true
+}

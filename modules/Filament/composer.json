@@ -1,0 +1,29 @@
+{
+  "name": "mohaphez/filament-module",
+  "description": "Filament module by Mohaphez",
+  "authors": [
+    {
+      "name": "Hessam Taghvaei",
+      "email": "mohaphez@gmail.com"
+    }
+  ],
+  "require": {
+    "filament/filament": "^3.1",
+    "realmrhex/filament-modular-v3": "^0.1",
+    "filament/spatie-laravel-translatable-plugin": "^3.1",
+    "bezhansalleh/filament-language-switch": "^3.0.4",
+    "invaders-xx/filament-jsoneditor": "^3.1",
+    "awcodes/filament-tiptap-editor": "^3.2"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [],
+      "aliases": {}
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\Filament\\": ""
+    }
+  }
+}
