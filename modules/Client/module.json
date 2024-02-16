@@ -1,0 +1,13 @@
+{
+    "id": "Client",
+    "title": "Client Module",
+    "version": 0.1,
+    "name": "Client",
+    "alias": "client",
+    "description": "Client module by Mohaphez",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Client\\Providers\\ClientServiceProvider"
+    ]
+}

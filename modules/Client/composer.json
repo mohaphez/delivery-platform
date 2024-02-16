@@ -1,0 +1,23 @@
+{
+    "name": "mohaphez/client-module",
+    "description": "Client module by Hessam Taghvei",
+    "authors": [
+        {
+            "name": "Hessam Taghvei",
+            "email": "mohaphez@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Client\\": ""
+        }
+    }
+}
