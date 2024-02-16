@@ -5,6 +5,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/themes/*/node_modules
 .env
 .env.backup
 .env.production

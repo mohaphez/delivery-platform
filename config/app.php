@@ -61,6 +61,17 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
+    'domains' => array_filter(
+        array_merge(
+            [
+                env('APP_BASE_DOMAIN', '')
+            ],
+            explode(
+                ',',
+                env('CENTRAL_DOMAINS', '')
+            )
+        )
+    ),
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
