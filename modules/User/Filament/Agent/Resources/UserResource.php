@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\User\Filament\Manager\Resources;
+namespace Modules\User\Filament\Agent\Resources;
 
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Modules\User\Enums\V1\AccountStatus\AccountStatus;
 use Modules\User\Enums\V1\AccountType\AccountType;
-use Modules\User\Filament\Manager\Resources\UserResource\Pages;
+use Modules\User\Filament\Agent\Resources\UserResource\Pages;
 
 class UserResource extends Resource
 {
@@ -124,8 +124,7 @@ class UserResource extends Resource
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
-            ])
-            ->filters([Tables\Filters\TrashedFilter::make()]);
+            ]);
     }
 
     public static function getGloballySearchableAttributes(): array

@@ -65,6 +65,7 @@ class User extends Authenticatable implements FilamentUser, HasName, MustVerifyE
             in_array(
                 optional(auth()->user())->account_type->value,
                 [
+                    AccountType::Agent->value,
                     AccountType::Manager->value,
                     AccountType::Sudo->value
                 ]

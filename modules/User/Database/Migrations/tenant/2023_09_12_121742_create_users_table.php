@@ -23,7 +23,7 @@ return new class () extends Migration {
             $table->string('password');
             $table->string('mobile')->nullable();
             $table->string('lang')->default('en');
-            $table->tinyInteger('account_type')->default(AccountType::Member->value);
+            $table->tinyInteger('account_type')->default(AccountType::Client->value);
             $table->tinyInteger('account_status')->default(AccountStatus::Free->value);
             $table->timestamp('last_login_date')->nullable();
             $table->timestamp('limitation_end_date')->nullable();

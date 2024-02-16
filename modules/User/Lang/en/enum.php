@@ -20,18 +20,20 @@ return [
     ],
 
     'account_type' => [
-        'member'       => 'User',
+        'driver'       => 'Driver',
+        'client'       => 'Client',
+        'agent'       => 'Agent',
         'manager'      => 'Manager',
         'system'       => 'System',
         'sudo'         => 'Sudo',
-        'parcel_owner' => 'Parcel Owner',
 
         'colors' => [
-            'member'       => 'warning',
+            'agent'       => 'warning',
             'manager'      => 'success',
             'system'       => 'primary',
             'sudo'         => 'danger',
-            'parcel_owner' => ''
+            'driver'       => '',
+            'client'       => '',
         ],
     ],
 ];
