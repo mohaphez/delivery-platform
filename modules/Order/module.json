@@ -1,0 +1,13 @@
+{
+    "id": "Order",
+    "title": "Order Module",
+    "version": 0.1,
+    "name": "Order",
+    "alias": "order",
+    "description": "Order module by Mohaphez",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Order\\Providers\\OrderServiceProvider"
+    ]
+}
