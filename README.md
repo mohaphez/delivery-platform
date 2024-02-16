@@ -81,7 +81,7 @@ cp .env.example .env
 ```bash
 ./vendor/bin/sail artisan module:migrate
 ./vendor/bin/sail artisan module:seed
-./vendor/bin/sail artisan tenant module:seed
+./vendor/bin/sail artisan tenants:run module:seed
 ```
 
 - Assign the role and permission to the default user:
@@ -93,7 +93,7 @@ cp .env.example .env
 
 ./vendor/bin/sail artisan tenants:run shield:generate --option="resource=RoleResource" --option="option=permissions"
 
-./vendor/bin/sail tenants:run shield:super-admin
+./vendor/bin/sail artisan tenants:run shield:super-admin
 ```
 
 - Install NPM dependencies and compile assets:
