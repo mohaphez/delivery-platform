@@ -1,0 +1,16 @@
+{
+    "id": "Agent",
+    "title": "Agent Module",
+    "version": 0.1,
+    "name": "Agent",
+    "alias": "agent",
+    "description": "Agent module by Mohaphez",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Agent\\Providers\\AgentServiceProvider"
+    ],
+    "files": [
+        "Helpers/helpers.php"
+    ]
+}
