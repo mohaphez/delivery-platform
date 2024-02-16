@@ -19,7 +19,7 @@ return new class () extends Migration {
     {
         Schema::create('tenants', function (Blueprint $table): void {
             $table->string('id')->primary();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->string('description')->nullable();
             $table->tinyInteger('status')->default(Status::Active);
             $table->timestamps();
