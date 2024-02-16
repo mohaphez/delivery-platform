@@ -10,8 +10,10 @@ enum AccountType: int
 {
     use CleanEnum;
 
-    case Member = 0;
-    case Manager = 1;
-    case Sudo = 2;
-    case System = 3;
+    case Driver = 0;
+    case Client = 1;
+    case Agent = 2;
+    case Manager = 3;
+    case Sudo = 4;
+    case System = 5;
 }

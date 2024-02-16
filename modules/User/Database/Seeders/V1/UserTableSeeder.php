@@ -29,6 +29,33 @@ class UserTableSeeder extends Seeder
                     'account_status' => AccountStatus::Free,
                 ],
             );
+            user()->create(
+                [
+                    'name'           => 'Agent User',
+                    'email'          => 'agent@example.com',
+                    'password'       => bcrypt('password'),
+                    'account_type'   => AccountType::Agent,
+                    'account_status' => AccountStatus::Free,
+                ],
+            );
+            user()->create(
+                [
+                    'name'           => 'Client User',
+                    'email'          => 'client@example.com',
+                    'password'       => bcrypt('password'),
+                    'account_type'   => AccountType::Client,
+                    'account_status' => AccountStatus::Free,
+                ],
+            );
+            user()->create(
+                [
+                    'name'           => 'Driver User',
+                    'email'          => 'driver@example.com',
+                    'password'       => bcrypt('password'),
+                    'account_type'   => AccountType::Driver,
+                    'account_status' => AccountStatus::Free,
+                ],
+            );
         }
 
     }
