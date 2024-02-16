@@ -6,5 +6,9 @@
     "Support": true,
     "User": true,
     "Permission": true,
-    "Tenant": true
+    "Tenant": true,
+    "Truck": true,
+    "Order": true,
+    "Agent": true,
+    "Theme": true
 }

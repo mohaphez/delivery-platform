@@ -2,12 +2,12 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build"
+        "mars:install": "cd themes/Mars/ && npm i",
+        "mars:dev": "cd themes/Mars/ && npm run dev",
+        "production": "cd themes/Mars/ && npm i && npm run build"
     },
-    "devDependencies": {
-        "axios": "^1.6.4",
-        "laravel-vite-plugin": "^1.0.0",
-        "vite": "^5.0.0"
+    "dependencies": {
+        "@tailwindcss/forms": "^0.5.7",
+        "@vitejs/plugin-vue": "^5.0.4"
     }
 }

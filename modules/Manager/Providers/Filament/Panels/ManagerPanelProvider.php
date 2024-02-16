@@ -20,7 +20,10 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Str;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 class ManagerPanelProvider extends PanelProvider
 {
@@ -69,6 +72,8 @@ class ManagerPanelProvider extends PanelProvider
                     DispatchServingFilamentEvent::class,
                 ]
             )
+            ->persistentMiddleware(['universal'])
+            ->domains(config('app.domains', ['localhost']))
             ->authMiddleware(
                 [
                     Authenticate::class,
