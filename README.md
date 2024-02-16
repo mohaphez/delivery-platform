@@ -71,6 +71,11 @@ cp .env.example .env
 ./vendor/bin/sail artisan key:generate
 ```
 
+- Update the Composer dependencies (required):
+```bash
+./vendor/bin/sail composer update
+```
+
 - Migrate the database:
 
 ```bash
@@ -82,9 +87,9 @@ cp .env.example .env
 - Assign the role and permission to the default user:
 
 ```bash
-./vendor/bin/sail shield:generate --resource=RoleResource --option=permissions
+./vendor/bin/sail artisan shield:generate --resource=RoleResource --option=permissions
 
-./vendor/bin/sail shield:super-admin
+./vendor/bin/sail artisan shield:super-admin
 
 ./vendor/bin/sail artisan tenants:run shield:generate --option="resource=RoleResource" --option="option=permissions"
 
