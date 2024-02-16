@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "../../vendor/stancl/tenancy": "^3.7.4"
+        "stancl/tenancy": "^3.7.4"
     },
     "extra": {
         "laravel": {

@@ -7,7 +7,6 @@ namespace Modules\Tenant\Database\Migrations;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Modules\Support\Enums\V1\Status\Status;
 
 return new class () extends Migration {
     /**

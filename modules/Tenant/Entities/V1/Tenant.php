@@ -18,7 +18,7 @@ class Tenant extends BaseTenant implements TenantWithDatabase
     use Modular;
 
 
-    protected $casts= [
+    protected $casts = [
         'status' => Status::class,
     ];
 }

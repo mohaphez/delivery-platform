@@ -33,7 +33,7 @@ return [
                 'th' => [
                     'id'     => 'ID',
                     'title'  => 'Title',
-                    'domain'  => 'Domain',
+                    'domain' => 'Domain',
                     'status' => 'Status',
                 ]
             ],

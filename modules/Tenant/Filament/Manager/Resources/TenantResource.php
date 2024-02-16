@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Tenant\Filament\Manager\Resources;
 
-use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
@@ -14,6 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Support\Enums\V1\Status\Status;
+use Modules\Tenant\Entities\V1\Tenant;
 use Modules\Tenant\Filament\Manager\Resources\TenantResource\Pages;
 
 class TenantResource extends Resource
@@ -23,7 +23,7 @@ class TenantResource extends Resource
 
     public static function getModel(): string
     {
-        return _tenant()->model();
+        return Tenant::class;
     }
 
     public static function getModelLabel(): string
@@ -43,7 +43,7 @@ class TenantResource extends Resource
                 TextInput::make('id')
                     ->label(__('tenant::filament.manager.tenant.inputs.id.label'))
                     ->required()
-                    ->unique(ignorable:fn($record) => $record)
+                    ->unique(ignorable:fn ($record) => $record)
                     ->maxLength(255),
                 TextInput::make('title')
                     ->label(__('tenant::filament.manager.tenant.inputs.title.label'))
@@ -113,7 +113,7 @@ class TenantResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index'  => Pages\ListTenants::route('/'),
+            'index' => Pages\ListTenants::route('/'),
         ];
     }
 }

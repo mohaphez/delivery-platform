@@ -5,18 +5,23 @@ declare(strict_types=1);
 namespace Modules\Tenant\Providers;
 
 use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 use Modules\Tenant\Contracts\Repositories\V1\TenantRepository;
 use Modules\Tenant\Contracts\Services\V1\TenantServiceInterface;
 use Modules\Tenant\Repositories\V1\TenantRepository\TenantEloquentRepository;
 use Modules\Tenant\Services\V1\TenantService;
 use Stancl\JobPipeline\JobPipeline;
 use Stancl\Tenancy\Events;
+use Stancl\Tenancy\Events\TenancyInitialized;
 use Stancl\Tenancy\Jobs;
 use Stancl\Tenancy\Listeners;
 use Stancl\Tenancy\Middleware;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 class TenantServiceProvider extends ServiceProvider
 {
@@ -35,6 +40,7 @@ class TenantServiceProvider extends ServiceProvider
         $this->bootEvents();
         $this->mapRoutes();
         $this->makeTenancyMiddlewareHighestPriority();
+        $this->prepareLivewireForTenancy();
     }
 
     /**
@@ -107,17 +113,26 @@ class TenantServiceProvider extends ServiceProvider
 
             // Tenancy events
             Events\InitializingTenancy::class => [],
-            Events\TenancyInitialized::class  => [
+            TenancyInitialized::class         => [
                 Listeners\BootstrapTenancy::class,
             ],
 
             Events\EndingTenancy::class => [],
             Events\TenancyEnded::class  => [
+                function (Events\TenancyEnded $event): void {
+                    $permissionRegistrar = app(\Spatie\Permission\PermissionRegistrar::class);
+                    $permissionRegistrar->cacheKey = 'spatie.permission.cache';
+                },
                 Listeners\RevertToCentralContext::class,
             ],
 
-            Events\BootstrappingTenancy::class      => [],
-            Events\TenancyBootstrapped::class       => [],
+            Events\BootstrappingTenancy::class => [],
+            Events\TenancyBootstrapped::class  => [
+                function (Events\TenancyBootstrapped $event): void {
+                    $permissionRegistrar = app(\Spatie\Permission\PermissionRegistrar::class);
+                    $permissionRegistrar->cacheKey = 'spatie.permission.cache.tenant.'.$event->tenancy->tenant->getTenantKey();
+                }
+            ],
             Events\RevertingToCentralContext::class => [],
             Events\RevertedToCentralContext::class  => [],
 
@@ -162,9 +177,9 @@ class TenantServiceProvider extends ServiceProvider
     {
         $tenancyMiddleware = [
             // Even higher priority than the initialization middleware
-            Middleware\PreventAccessFromCentralDomains::class,
+            PreventAccessFromCentralDomains::class,
 
-            Middleware\InitializeTenancyByDomain::class,
+            InitializeTenancyByDomain::class,
             Middleware\InitializeTenancyBySubdomain::class,
             Middleware\InitializeTenancyByDomainOrSubdomain::class,
             Middleware\InitializeTenancyByPath::class,
@@ -174,5 +189,22 @@ class TenantServiceProvider extends ServiceProvider
         foreach (array_reverse($tenancyMiddleware) as $middleware) {
             $this->app[Kernel::class]->prependToMiddlewarePriority($middleware);
         }
+
+        $this->app[Router::class]->middlewareGroup('universal', []);
+    }
+
+
+    private function prepareLivewireForTenancy(): void
+    {
+        Livewire::setUpdateRoute(function ($handle) {
+            return Route::post('/livewire/update', $handle)
+                ->middleware(
+                    [
+                        'web',
+                        'universal',
+                        InitializeTenancyByDomain::class,
+                    ]
+                )->name('livewire.update');
+        });
     }
 }

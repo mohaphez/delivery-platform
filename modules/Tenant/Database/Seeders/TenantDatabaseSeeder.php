@@ -6,6 +6,7 @@ namespace Modules\Tenant\Database\Seeders;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use Modules\Tenant\Database\Seeders\V1\TenantTableSeeder;
 
 class TenantDatabaseSeeder extends Seeder
 {
@@ -18,6 +19,6 @@ class TenantDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        $this->call([TenantTableSeeder::class,]);
     }
 }
