@@ -1,0 +1,13 @@
+{
+    "id": "Truck",
+    "title": "Truck Module",
+    "version": 0.1,
+    "name": "Truck",
+    "alias": "truck",
+    "description": "Truck module by Mohaphez",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Truck\\Providers\\TruckServiceProvider"
+    ]
+}
